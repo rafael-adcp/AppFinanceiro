@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/jumbotron/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>App Fincanceiro</title> 
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+  </head>
+
+  <body onload = "mostrar('home'),tabelaHome(' ',' ');">
+	
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="index.html">App Fincanceiro</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+						<li><a href="#about" data-toggle="modal" data-target="#About">Sobre</a></li>
+						<li><a href="#contact" data-toggle="modal" data-target="#Contact">Contato</a></li>
+				</ul>
+			</div><!--/.navbar-collapse -->
+		  </div>
+		</nav>
+		
+		
+		<!-- about -->
+<div class="modal fade" id="About" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        About
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+		
+		<!-- Modal -->
+<div class="modal fade" id="Contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Contato</h4>
+      </div>
+      <div class="modal-body">
+        <address>
+		Developed by  <a href = "mailto:rafael_adcp@hotmail.com">Rafael Prado</a><br/>
+		Version Hash: b68ec91f9a6e581c69c926174f3246db4ca7e5ee<br/>
+		Last Build: 23/12/2015
+        </address>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+		<!-- Modal -->
+<div class="modal fade" id="Editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar</h4>
+      </div>
+      <div class="modal-body">
+       <div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<h2 class="">Editar movimentação</h2>
+						</div>
+					</div>
+					<input type="hidden" class="form-control" id="idMovimentacaoSendoEditada">
+					<div class="form-group">
+						<label for="data" class="col-sm-3 control-label">Data</label>
+						<div class="col-sm-8">
+							<input type="date" class="form-control" id="dataEditar">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="valor" class="col-sm-3 control-label">Valor</label>
+						<div class="col-sm-8">
+							<input type="number" class="form-control" id="valorEditar">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="select" class="col-sm-3 control-label">Categoria</label>
+						<div class="col-sm-8">
+							<div id = "selectEditar"></div>
+						</div>
+					</div>
+					
+				
+				</form>
+			</div>
+		</div> 
+      </div>
+      <div class="modal-footer">
+      	<button class="btn btn-primary" type="button" onclick = "Update()">Atualizar</button>
+      	<button class="btn btn-danger" onclick = "Delete()"   type="button">Excluir</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+		
+<br/><br/><br/><br/><br/>		
+<div class = "container">
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+		
+			<button class="btn btn-default" onclick = "mostrar('home'),tabelaHome(' ',' ');" type="button">Home</button>
+			<button class="btn btn-default" onclick = "mostrar('add'), mostrarSelect('#select')"type="button">Adicionar</button>
+			<button class="btn btn-default" onclick = "mostrar('extrato'),SelectAll();"   type="button">Extrato</button>
+			<button class="btn btn-default" onclick = "mostrar('graficos'),SelectAll(),select_grafico();"   type="button">Graficos</button>
+			<button class="btn btn-danger" onclick = "DropTable()"   type="button">Limpar Tabela</button>
+			<button class="btn btn-default" onclick = "mostrar('resumo'),resumo()"   type="button">Resumo</button>
+			<button class="btn btn-warning" onclick = "Popular();" type="button">populis bagaçis</button>
+		</div>
+	</div>
+	  
+	
+	<div id = "home">
+	
+	<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<h2 class="">Home</h2>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="inicio" class="col-sm-3 control-label">Início</label>
+						<div class="col-sm-8">
+							<input type="date" class="form-control" id="inicio" onchange = "atualizaTabelaHome()">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="fim" class="col-sm-3 control-label">Fim</label>
+						<div class="col-sm-8">
+							<input type="date" class="form-control" id="fim" onchange = "atualizaTabelaHome()">
+						</div>
+					</div>
+					<!--<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-8">
+							<button class="btn btn-sm btn-primary" type="button" onclick = "atualizaTabelaHome()">Atualizar</button>
+						</div>
+					</div>-->
+				</form>	
+			</div>
+	</div>
+	
+	
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="table-responsive">
+				<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Entrada</th>
+								<th>Investimento</th>
+								<th>Saida</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id = "entrada"></td>
+								<td id = "investimento"></td>
+								<td id = "saida"></td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+					<div  id = "tabela_home"></div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+	</div>
+
+	
+	
+	
+	<div id = "add">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<h2 class="">Adicionar movimentação</h2>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="data" class="col-sm-3 control-label">Data</label>
+						<div class="col-sm-8">
+							<input type="date" class="form-control" id="data">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="valor" class="col-sm-3 control-label">Valor</label>
+						<div class="col-sm-8">
+							<input type="number" class="form-control" id="valor">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="select" class="col-sm-3 control-label">Categoria</label>
+						<div class="col-sm-8">
+							<div id = "select"></div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-8">
+							<button class="btn btn-lg btn-primary" type="button" onclick = "Inserir()">Adicionar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id = "extrato">
+	
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2 class="">Extrato</h2>
+				<div class="table-responsive">
+					<div  id = "tabela_extrato"></div>
+						<div id = "select"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+		<div id = "resumo">
+	
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2 class="">Resumo</h2>
+				
+				
+				<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            Entrada
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse">
+        <div class="panel-body">
+         <div  id = "tabela_entrada"></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+           Saida
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div  id = "tabela_saida"></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+            Investimento
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div  id = "tabela_investimento"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Menor</th>
+								<th>Média</th>
+								<th>Maior</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Entrada</td>
+								<td id = "menorEntrada"></td>
+								<td id = "mediaEntrada"></td>
+								<td id = "maiorEntrada"></td>
+							</tr>
+							<tr>
+								<td>Saida</td>
+								<td id = "menorSaida"></td>
+								<td id = "mediaSaida"></td>
+								<td id = "maiorSaida"></td>
+							</tr>
+							<tr>
+								<td>Investimento</td>
+								<td id = "menorInvestimento"></td>
+								<td id = "mediaInvestimento"></td>
+								<td id = "maiorInvestimento"></td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+<div  id = "graficoResumo"></div>					
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+		
+	
+	
+	
+	<div id = "graficos">
+	
+	
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2 class="">Gráficos</h2>
+				<form class="form-horizontal">
+					<div class="form-group">
+					
+						<label for="select" class="col-sm-3 control-label">Categoria</label>
+						<div class="col-sm-8">
+							<div  id = "select_grafico"></div>
+						</div>												
+					</div>						
+				</form>			
+						<div id = "select"></div>
+						
+						<div  id = "tabela_grafico"></div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Menor</th>
+								<th>Média</th>
+								<th>Maior</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id = "menor"></td>
+								<td id = "media"></td>
+								<td id = "maior"></td>
+							</tr>
+							
+							
+						</tbody>
+					</table><div id="chartContainer"></div>	
+			</div>
+		</div>	
+			
+			
+		
+			
+			
+			
+			
+		
+		
+		
+	</div>
+	
+	
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	
+	<script src="auxiliares.js"></script>
+	<script src="manipulacao_dados.js"></script>
+	<script src="dados_mock.js"></script>
+	<script src="canvasjs.min.js"></script>
+</body>
+</html>
