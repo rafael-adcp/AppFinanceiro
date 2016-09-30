@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS `movimentacoes` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`Data` date NOT NULL,
+`Valor` decimal(4,2) NOT NULL,
+`Descricao` int NOT NULL,
+PRIMARY KEY (`id`)
+)

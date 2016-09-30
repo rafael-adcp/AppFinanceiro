@@ -166,6 +166,7 @@
 			<button class="btn btn-danger" onclick = "DropTable()"   type="button">Limpar Tabela</button>
 			<button class="btn btn-default" onclick = "mostrar('resumo'),resumo()"   type="button">Resumo</button>
 			<button class="btn btn-warning" onclick = "Popular();" type="button">populis bagaçis</button>
+			<button class="btn btn-default" onclick = "mostrar('lista'),lista()"   type="button">Listar</button>
 		</div>
 	</div>
 	  
@@ -298,7 +299,17 @@
 		</div>
 	</div>
 	
-	
+	<div id = "lista">
+		<div class="row">
+				
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<h2 class="">Lista</h2>
+					<div id = "resultado_lista"></div>
+				</div>
+				<div class="col-sm-4"></div>
+		</div>
+	</div>
 	
 		<div id = "resumo">
 	
@@ -471,7 +482,7 @@
 	
 	<script src="auxiliares.js"></script>
 	<script src="manipulacao_dados.js"></script>
-	<script src="dados_mock.js"></script>
+	<script src="dados_reais.js"></script>
 	<script src="canvasjs.min.js"></script>
 </body>
 </html>

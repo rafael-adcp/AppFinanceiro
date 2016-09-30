@@ -11,6 +11,7 @@ function ocultar(){
 	document.getElementById('extrato').style.display = 'none';
 	document.getElementById('graficos').style.display = 'none';
 	document.getElementById('resumo').style.display = 'none';
+	document.getElementById('lista').style.display = 'none';
 	
 	
 	
@@ -82,6 +83,7 @@ var select =
 		'<option value = "424">Seguro</option>'+
 		'<option value = "425">Transporte Público</option>'+
 		'<option value = "426">Casa</option>'+
+		'<option value = "427">Nubank</option>'+
 
 		
 		
@@ -89,7 +91,7 @@ var select =
 	
 	'<optGroup label = "Investimentos">'+
 		'<option value = "800">Compromissada DI</option>'+
-		'<option value = "801">Resgate Poupança</option>'+
+		
 		'<option value = "802">PIC</option>'+
 		'<option value = "803">Compromissada DI Plus</option>'+
 			'<option value = "804">Poupança</option>'+

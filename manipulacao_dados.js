@@ -612,4 +612,51 @@ function resumo(){
 	chart.render();
 }
 
-
+function lista(){
+	db.transaction(function (tx)
+    {
+        tx.executeSql('SELECT * FROM movimentacao order by data ASC', [], function (tx, results)
+        {
+			document.getElementById('resultado_lista').value = "";
+			var msg = "";
+			msg += '<table class="table table-striped">'+
+						'<thead>'+
+							'<tr>'+
+								//'<th>#</th>'+
+								'<th>Data</th>'+
+								'<th>Valor</th>'+
+								'<th>Descrição</th>'+
+							'</tr>'+
+						'</thead><tbody>';
+			
+            var len = results.rows.length, i;          
+			var cor;
+			var data;
+			var dia;
+			var mes;
+			var ano;
+            for (i = 0; i < len; i++){
+				
+				msg +='<tr>';
+				data = results.rows.item(i).data;
+				
+				dia = data.substring(8,10);
+				mes = data.substring(5,7);
+				ano = data.substring(0,4);
+			
+				
+		
+				
+				msg +='<td>'+ano + mes +dia+'</td>';
+				msg +='<td>' + results.rows.item(i).valor+ '</td>';
+				msg +='<td>' + RetornaTextSelect(results.rows.item(i).categoria) + '</td>';
+			//	msg +='<td>'+ results.rows.item(i)['id']+'<td>';
+				//var x = results.rows.item(i)['id'];
+				var x = results.rows.item(i).id;
+				msg +='</tr>';
+			}
+			msg += '</tbody></table></div>';
+            document.getElementById('resultado_lista').innerHTML= msg;
+		});
+    }); 
+}
